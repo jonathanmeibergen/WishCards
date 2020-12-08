@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using WishCards.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,9 @@ namespace WishCards.Data
             : base(options)
         {
         }
+
+        public DbSet<WishCard> WishCards;
+        public DbSet<Recipient> Recipients;
+        public DbSet<WishCards.Models.Recipient> Recipient { get; set; }
     }
 }

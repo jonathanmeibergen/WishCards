@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace KerstKaarten.DAL
+namespace WishCards.DAL
 {
     public class MockDataService
     {

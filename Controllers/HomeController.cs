@@ -23,6 +23,16 @@ namespace WishCards.Controllers
             return View();
         }
 
+        public ActionResult Home()
+        {
+            return View();
+        }
+
+        public ActionResult FillInData()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

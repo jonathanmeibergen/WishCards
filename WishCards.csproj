@@ -34,8 +34,12 @@
 
   <ItemGroup>
     <Folder Include="CSS\" />
-    <Folder Include="CSVFiles\" />
-    <Folder Include="CSVToIEnumerableConverters\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="CSVFiles\FontTest.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

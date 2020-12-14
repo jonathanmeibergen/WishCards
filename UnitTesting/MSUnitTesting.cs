@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WishCards.CSVToIEnumerableConverters;
+using WishCards.Enumerations;
 
 namespace WishCards.UnitTesting
 {
@@ -10,9 +12,15 @@ namespace WishCards.UnitTesting
     public class MSUnitTesting
     {
         [TestMethod]
-        public void test()
-        { 
-        
-        }
+        [TestCategory("Initalization")]
+        [DynamicData(nameof(TestEnums.TestFonts),typeof(TestEnums))]
+        public void FontTest(string value)
+        {
+            List<string> Fontcollection = new List<string>();
+            Fontcollection.Add(FontsEnum.Courier.ToString());
+            Fontcollection.Add(FontsEnum.Helvetica.ToString());
+            Fontcollection.Add(FontsEnum.TimesNewRoman.ToString());
+            CollectionAssert.Contains(Fontcollection,value);
+        } 
     }
 }

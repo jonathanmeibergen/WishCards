@@ -9,6 +9,7 @@ using WishCards.Users;
 
 namespace WishCards.DAL
 {
+    #region actualDataBase
     public class WishCardDbData
     {
         private ApplicationDbContext _db;
@@ -36,4 +37,5 @@ namespace WishCards.DAL
             return entity.Entity;
         }
     }
+    #endregion
 }

@@ -63,7 +63,7 @@ namespace WishCards
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=StartPage}/{action=StartPage}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

@@ -6,14 +6,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\css\InputPageLayout.css" />
+    <None Include="wwwroot\Images\christmas-background1.jpg" />
+    <None Include="wwwroot\Images\Christmas-background2.jpg" />
+    <None Include="wwwroot\Images\christmas-background3.jpg" />
+    <None Include="wwwroot\Images\test.png" />
+    <None Include="wwwroot\Mp3Jingles\Andy Williams - It%27s The Most Wonderful Time Of The Year.mp3" />
+    <None Include="wwwroot\Mp3Jingles\Mariah Carey - All I Want For Christmas Is You %28Official Video%29.mp3" />
+    <None Include="wwwroot\Mp3Jingles\Wham! - Last Christmas %28Official Video%29.mp3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BootstrapNotifications" Version="0.3.2" />
     <PackageReference Include="iTextSharp" Version="5.5.13.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CSS\" />
+    <Folder Include="CSVFiles\" />
+    <Folder Include="CSVToIEnumerableConverters\" />
   </ItemGroup>
 
 </Project>

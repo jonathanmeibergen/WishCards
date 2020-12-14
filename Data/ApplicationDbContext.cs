@@ -7,6 +7,7 @@ using System.Text;
 
 namespace WishCards.Data
 {
+    #region datastorage
     public class ApplicationDbContext : IdentityDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -18,4 +19,6 @@ namespace WishCards.Data
         public DbSet<Recipient> Recipients;
         public DbSet<WishCards.Models.Recipient> Recipient { get; set; }
     }
+
+    #endregion
 }

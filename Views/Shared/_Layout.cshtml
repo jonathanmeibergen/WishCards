@@ -1,4 +1,23 @@
 ﻿<!DOCTYPE html>
+<style>
+    /*﻿.navbar {
+        background-image: linear-gradient(to right, orange, yellow);
+        background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+        background-color: orange;
+        border: none;
+ 
+    }*/
+
+    body {
+        background-image:url(../../wwwroot/Images/Christmas-vectors.jpg) !important;
+
+    }
+    nav {
+        background-image: linear-gradient(to right, red, orange);
+        z-index: -1;
+        position: absolute;
+    }
+</style>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -9,7 +28,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WishCards</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -36,11 +55,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - WishCards - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+   
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

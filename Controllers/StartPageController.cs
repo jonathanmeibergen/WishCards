@@ -8,9 +8,12 @@ namespace WishCards.Controllers
 {
     public class StartPageController : Controller
     {
+        #region startingPage
         public IActionResult StartPage()
         {
             return View();
         }
+
+        #endregion
     }
 }

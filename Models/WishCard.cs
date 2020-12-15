@@ -12,7 +12,7 @@ namespace WishCards.Models
     {
 
         [Key]
-        public string Id { get; set; }
+        public Guid Id { get; set; }
         public virtual ApplicationUser Author {get; set;}
         public virtual List<Recipient> Recipients { get; set; }
         public string Text { get; set; }

@@ -17,7 +17,7 @@ namespace WishCards.DAL
         {
             _db = db;
         }
-        public WishCard GetById(string id)
+        public WishCard GetById(Guid id)
         {
             return _db.WishCards.FirstOrDefault(w => w.Id == id);
         }
@@ -38,20 +38,23 @@ namespace WishCards.DAL
 
         public WishCard Create(WishCard card)
         {
-            var entry = _db.WishCards.Add(card);
-            return entry.Entity;
+            if (card is not null)
+            {
+                var entry = _db.WishCards.Add(card);
+                return entry.Entity;
+            }
+            return null;
         }
 
-        public void Commit() => _db.SaveChangesAsync();
+        public void Commit(Guid id) => _db.SaveChangesAsync();
 
-        public WishCard Delete(string id)
+        public WishCard Delete(Guid id)
         {
             var card = GetById(id);
 
             if (card != null)
             {
                 _db.WishCards.Remove(card);
-                Commit();
             }
             return card;
         }

@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WishCards.DAL;
 using WishCards.Data;
 
 namespace WishCards
@@ -34,6 +35,7 @@ namespace WishCards
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddScoped<IWishCardDbData, WishCardDbData>();
             services.AddControllersWithViews();
         }
 

@@ -4,21 +4,29 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WishCards.Enumerations;
+using WishCards.Models;
+using WishCards.Extensions;
+using System.ComponentModel;
+using WishCards.Attributes;
 
 namespace WishCards.Controllers
 {
     public class FillInDataController : Controller
     {
         // GET: FillInDataController
-        public ActionResult FillInData()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            WishCardViewModel cardVM = new WishCardViewModel();
+            cardVM.WishCard = new WishCard();
+            cardVM.WishCard.Background = BackgroundsEnum.Red;
+            return View(cardVM);
         }
 
         // POST: FillInDataController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult FillInData(IFormCollection collection)
+        public async Task<IActionResult> Create(IFormCollection collection)
         {
             try
             {

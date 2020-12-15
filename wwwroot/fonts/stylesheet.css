@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Candy Cane (Unregistered)';
+    src: url('CandyCaneUnregistered.woff2') format('woff2'),
+        url('CandyCaneUnregistered.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Chopin Script';
+    src: url('ChopinScript.woff2') format('woff2'),
+        url('ChopinScript.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'the Gingerbread House';
+    src: url('theGingerbreadHouse.woff2') format('woff2'),
+        url('theGingerbreadHouse.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Glass Antiqua';
+    src: url('GlassAntiqua-Regular.woff2') format('woff2'),
+        url('GlassAntiqua-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'One Starry Night';
+    src: url('OneStarryNight.woff2') format('woff2'),
+        url('OneStarryNight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Perfect Christmas';
+    src: url('ThePerfectChristmas.woff2') format('woff2'),
+        url('ThePerfectChristmas.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Waving at Christmas';
+    src: url('WavingatChristmas.woff2') format('woff2'),
+        url('WavingatChristmas.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

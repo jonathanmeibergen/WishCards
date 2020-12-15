@@ -6,9 +6,6 @@ namespace WishCards.Extensions
 {
     public static class EnumExtensions
     {
-        public static void Extra(this Enum enumValue){
-        }
-
 
         public static Expected GetAttributeValue<T, Expected>(this Enum enumeration, Func<T, Expected> expression) where T : Attribute
         {

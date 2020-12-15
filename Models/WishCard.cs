@@ -15,6 +15,7 @@ namespace WishCards.Models
         public string Id { get; set; }
         public virtual ApplicationUser Author {get; set;}
         public virtual List<Recipient> Recipients { get; set; }
+        public string Text { get; set; }
         public TypeFacesEnum TypeFace { get; set; }
         public ColorsEnum TextColor { get; set; }
         public BackgroundsEnum Background { get; set; }

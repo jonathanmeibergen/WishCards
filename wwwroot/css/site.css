@@ -69,3 +69,108 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/**/
+
+@font-face {
+    font-family: 'Candy Cane';
+    src: url('../fonts/CandyCaneUnregistered.woff2') format('woff2'), url('../fonts/CandyCaneUnregistered.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Chopin Script';
+    src: url('../fonts/ChopinScript.woff2') format('woff2'), url('../fonts/ChopinScript.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'the Gingerbread House';
+    src: url('../fonts/theGingerbreadHouse.woff2') format('woff2'), url('../fonts/theGingerbreadHouse.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Glass Antiqua';
+    src: url('../fonts/GlassAntiqua-Regular.woff2') format('woff2'), url('../fonts/GlassAntiqua-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'One Starry Night';
+    src: url('../fonts/OneStarryNight.woff2') format('woff2'), url('../fonts/OneStarryNight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Perfect Christmas';
+    src: url('../fonts/ThePerfectChristmas.woff2') format('woff2'), url('../fonts/ThePerfectChristmas.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Waving at Christmas';
+    src: url('../fonts/WavingatChristmas.woff2') format('woff2'), url('../fonts/WavingatChristmas.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+#render_text{
+    margin:-250px 20px 20px 20px;
+    width:510px;
+}
+
+#render_text p {
+    white-space: pre-wrap;
+}
+
+.type_Chopin {
+    font-family: 'Chopin Script';
+    font-size: 32px;
+}
+
+.type_GingerBread {
+    font-family: 'the Gingerbread House';
+    font-size: 32px;
+}
+
+.type_Glass {
+    font-family: 'Glass Antiqua';
+    font-size: 32px;
+}
+
+.type_StarryNight{
+    font-family:'One Starry Night';
+    font-size:52px;
+}
+
+.type_Waving{
+    font-family:'Waving at Christmas';
+    font-size:48px;
+}
+
+.type_Candy{
+    font-family:'Candy Cane';
+    font-size:38px;
+}
+
+.type_Perfect{
+    font-family:'The Perfect Christmas';
+    font-size:58px;
+    line-height:0.95em;
+}

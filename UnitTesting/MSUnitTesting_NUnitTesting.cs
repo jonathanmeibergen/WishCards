@@ -255,6 +255,1064 @@ namespace WishCards.UnitTesting
         }
 
 
+        [TestMethod]
+        [TestCategory("Loggingtesting")]
+        public void LoggingTest()
+        {
+            Action action = () => LoggingAndTracing.Log4Net.logging();
+            NUnit.Framework.Assert.DoesNotThrow(() => action(), "Logging is functional");
+        }
 
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void RecipientPropertiesTestingId()
+        {
+            Models.Recipient model = new Recipient()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Email = "test@gmail.com",
+                FirstName = "test",
+                LastName = "test",
+                StoreBackgroundImage = BackgroundImageEnum.Background1,
+                StoreFont = FontsEnum.Courier,
+                StoreMp3 = Mp3Enum.Jingle1
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Id, "Propertie working properly");      
+        }
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void RecipientPropertiesTestingEmail()
+        {
+            Models.Recipient model = new Recipient()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Email = "test@gmail.com",
+                FirstName = "test",
+                LastName = "test",
+                StoreBackgroundImage = BackgroundImageEnum.Background1,
+                StoreFont = FontsEnum.Courier,
+                StoreMp3 = Mp3Enum.Jingle1
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Email, "Propertie working properly");
+        }
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void RecipientPropertiesTestingFirstName()
+        {
+            Models.Recipient model = new Recipient()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Email = "test@gmail.com",
+                FirstName = "test",
+                LastName = "test",
+                StoreBackgroundImage = BackgroundImageEnum.Background1,
+                StoreFont = FontsEnum.Courier,
+                StoreMp3 = Mp3Enum.Jingle1
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.FirstName, "Propertie working properly");
+        }
+
+
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void RecipientPropertiesTestingLastName()
+        {
+            Models.Recipient model = new Recipient()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Email = "test@gmail.com",
+                FirstName = "test",
+                LastName = "test",
+                StoreBackgroundImage = BackgroundImageEnum.Background1,
+                StoreFont = FontsEnum.Courier,
+                StoreMp3 = Mp3Enum.Jingle1
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.LastName, "Propertie working properly");
+        }
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void RecipientPropertiesTestingBackground()
+        {
+            Models.Recipient model = new Recipient()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Email = "test@gmail.com",
+                FirstName = "test",
+                LastName = "test",
+                StoreBackgroundImage = BackgroundImageEnum.Background1,
+                StoreFont = FontsEnum.Courier,
+                StoreMp3 = Mp3Enum.Jingle1
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.StoreBackgroundImage, "Propertie working properly");
+        }
+
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void RecipientPropertiesTestingFont()
+        {
+            Models.Recipient model = new Recipient()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Email = "test@gmail.com",
+                FirstName = "test",
+                LastName = "test",
+                StoreBackgroundImage = BackgroundImageEnum.Background1,
+                StoreFont = FontsEnum.Courier,
+                StoreMp3 = Mp3Enum.Jingle1
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.StoreFont, "Propertie working properly");
+        }
+
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void RecipientPropertiesTestingMp3()
+        {
+            Models.Recipient model = new Recipient()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Email = "test@gmail.com",
+                FirstName = "test",
+                LastName = "test",
+                StoreBackgroundImage = BackgroundImageEnum.Background1,
+                StoreFont = FontsEnum.Courier,
+                StoreMp3 = Mp3Enum.Jingle1
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.StoreMp3, "Propertie working properly");
+        }
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void SenderPropertiesTestingId()
+        {
+            Models.SenderData model = new SenderData()
+            {
+             Id = Guid.NewGuid().ToString(),
+             addition = "test",
+             emailadress = "test@gmail.com",
+             firstname = "test",
+             lastname = "test",
+             messagetoshow = "test"
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Id, "Propertie working properly");
+        }
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void SenderPropertiesTestingAddition()
+        {
+            Models.SenderData model = new SenderData()
+            {
+                Id = Guid.NewGuid().ToString(),
+                addition = "test",
+                emailadress = "test@gmail.com",
+                firstname = "test",
+                lastname = "test",
+                messagetoshow = "test"
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.addition, "Propertie working properly");
+        }
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void SenderPropertiesTestingEmailAdress()
+        {
+            Models.SenderData model = new SenderData()
+            {
+                Id = Guid.NewGuid().ToString(),
+                addition = "test",
+                emailadress = "test@gmail.com",
+                firstname = "test",
+                lastname = "test",
+                messagetoshow = "test"
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.emailadress, "Propertie working properly");
+        }
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void SenderPropertiesTestingFirstName()
+        {
+            Models.SenderData model = new SenderData()
+            {
+                Id = Guid.NewGuid().ToString(),
+                addition = "test",
+                emailadress = "test@gmail.com",
+                firstname = "test",
+                lastname = "test",
+                messagetoshow = "test"
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.firstname, "Propertie working properly");
+        }
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void SenderPropertiesTestingLastName()
+        {
+            Models.SenderData model = new SenderData()
+            {
+                Id = Guid.NewGuid().ToString(),
+                addition = "test",
+                emailadress = "test@gmail.com",
+                firstname = "test",
+                lastname = "test",
+                messagetoshow = "test"
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.lastname, "Propertie working properly");
+        }
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void SenderPropertiesTestingMessageToShow()
+        {
+            Models.SenderData model = new SenderData()
+            {
+                Id = Guid.NewGuid().ToString(),
+                addition = "test",
+                emailadress = "test@gmail.com",
+                firstname = "test",
+                lastname = "test",
+                messagetoshow = "test"
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.messagetoshow, "Propertie working properly");
+        }
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void WishCardPropertiesTestingId()
+        {
+            Models.WishCard model = new WishCard()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Recipients = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+              sender = new SenderData()
+              {
+                  Id = Guid.NewGuid().ToString(),
+                  addition = "test",
+                  emailadress = "test@gmail.com",
+                  firstname = "test",
+                  lastname = "test",
+                  messagetoshow = "test"
+              },
+             background = BackgroundImageEnum.Background1,
+             font = FontsEnum.Courier,
+             mp3 = Mp3Enum.Jingle1,
+             Text = "test"
+
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Id, "Propertie working properly");
+        }
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void WishCardPropertiesTestingRecipient()
+        {
+            Models.WishCard model = new WishCard()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Recipients = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                sender = new SenderData()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    addition = "test",
+                    emailadress = "test@gmail.com",
+                    firstname = "test",
+                    lastname = "test",
+                    messagetoshow = "test"
+                },
+                background = BackgroundImageEnum.Background1,
+                font = FontsEnum.Courier,
+                mp3 = Mp3Enum.Jingle1,
+                Text = "test"
+
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipients, "Propertie working properly");
+        }
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void WishCardPropertiesTestingSender()
+        {
+            Models.WishCard model = new WishCard()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Recipients = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                sender = new SenderData()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    addition = "test",
+                    emailadress = "test@gmail.com",
+                    firstname = "test",
+                    lastname = "test",
+                    messagetoshow = "test"
+                },
+                background = BackgroundImageEnum.Background1,
+                font = FontsEnum.Courier,
+                mp3 = Mp3Enum.Jingle1,
+                Text = "test"
+
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.sender, "Propertie working properly");
+        }
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void WishCardPropertiesTestingBackground()
+        {
+            Models.WishCard model = new WishCard()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Recipients = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                sender = new SenderData()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    addition = "test",
+                    emailadress = "test@gmail.com",
+                    firstname = "test",
+                    lastname = "test",
+                    messagetoshow = "test"
+                },
+                background = BackgroundImageEnum.Background1,
+                font = FontsEnum.Courier,
+                mp3 = Mp3Enum.Jingle1,
+                Text = "test"
+
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.background, "Propertie working properly");
+        }
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void WishCardPropertiesTestingfont()
+        {
+            Models.WishCard model = new WishCard()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Recipients = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                sender = new SenderData()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    addition = "test",
+                    emailadress = "test@gmail.com",
+                    firstname = "test",
+                    lastname = "test",
+                    messagetoshow = "test"
+                },
+                background = BackgroundImageEnum.Background1,
+                font = FontsEnum.Courier,
+                mp3 = Mp3Enum.Jingle1,
+                Text = "test"
+
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.font, "Propertie working properly");
+        }
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void WishCardPropertiesTestingMp3()
+        {
+            Models.WishCard model = new WishCard()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Recipients = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                sender = new SenderData()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    addition = "test",
+                    emailadress = "test@gmail.com",
+                    firstname = "test",
+                    lastname = "test",
+                    messagetoshow = "test"
+                },
+                background = BackgroundImageEnum.Background1,
+                font = FontsEnum.Courier,
+                mp3 = Mp3Enum.Jingle1,
+                Text = "test"
+
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.mp3, "Propertie working properly");
+        }
+
+
+        [TestMethod]
+        [TestCategory("ModelTesting")]
+        public void WishCardPropertiesTestingText()
+        {
+            Models.WishCard model = new WishCard()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Recipients = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                sender = new SenderData()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    addition = "test",
+                    emailadress = "test@gmail.com",
+                    firstname = "test",
+                    lastname = "test",
+                    messagetoshow = "test"
+                },
+                background = BackgroundImageEnum.Background1,
+                font = FontsEnum.Courier,
+                mp3 = Mp3Enum.Jingle1,
+                Text = "test"
+
+            };
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Text, "Propertie working properly");
+        }
+
+        [TestMethod]
+        [TestCategory("SendDataTest")]
+        public void MailingTest()
+        {
+            Action action = () => SmtpMailService.SendCustomerMail.SendMailToCustomer
+            (
+                "Test@gmail.com",
+                ITextSharpPdfCreator.GeneratefileForCustomers.GeneratePdfFileForCustomer("test", "test", "test", "test", BackgroundImageEnum.Background1, Mp3Enum.Jingle1, FontsEnum.Courier),
+                Mp3Enum.Jingle1
+            );
+            NUnit.Framework.Assert.DoesNotThrow(() => action(), "Mailing is functional");
+
+        }
+
+        [TestMethod]
+        [TestCategory("TestViewModels")]
+        public void OnePersonGeneralChoiceViewmodelTest()
+        {
+            ViewModel.SenderAndRecieversOnePersonSingleChoice model = new ViewModel.SenderAndRecieversOnePersonSingleChoice()
+            {
+                GeneralBackgroundImageChoice = BackgroundImageEnum.Background1,
+                GeneralFontChoice = FontsEnum.Courier,
+                GeneralMp3Choice = Mp3Enum.Jingle1,
+                Recipient1 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                sender = new SenderData()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    addition = "test",
+                    emailadress = "test@gmail.com",
+                    firstname = "test",
+                    lastname = "test",
+                    messagetoshow = "test"
+                }
+            };
+
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.GeneralBackgroundImageChoice, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.GeneralFontChoice, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.GeneralMp3Choice, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.sender, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient1, "Propertie working properly");
+
+        }
+
+        [TestMethod]
+        [TestCategory("TestViewModels")]
+        public void TwoPersonsGeneralChoiceViewmodelTest()
+        {
+            ViewModel.SenderAndRecieversTwoPersonsSingleChoice model = new ViewModel.SenderAndRecieversTwoPersonsSingleChoice()
+            {
+                GeneralBackgroundImageChoice = BackgroundImageEnum.Background1,
+                GeneralFontChoice = FontsEnum.Courier,
+                GeneralMp3Choice = Mp3Enum.Jingle1,
+                Recipient1 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient2 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                sender = new SenderData()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    addition = "test",
+                    emailadress = "test@gmail.com",
+                    firstname = "test",
+                    lastname = "test",
+                    messagetoshow = "test"
+                }
+            };
+
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.GeneralBackgroundImageChoice, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.GeneralFontChoice, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.GeneralMp3Choice, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.sender, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient1, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient2, "Propertie working properly");
+
+        }
+
+
+        [TestMethod]
+        [TestCategory("TestViewModels")]
+        public void ThreePersonsGeneralChoiceViewmodelTest()
+        {
+            ViewModel.SenderAndRecieversThreePersonsSingleChoice model = new ViewModel.SenderAndRecieversThreePersonsSingleChoice()
+            {
+                GeneralBackgroundImageChoice = BackgroundImageEnum.Background1,
+                GeneralFontChoice = FontsEnum.Courier,
+                GeneralMp3Choice = Mp3Enum.Jingle1,
+                Recipient1 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient2 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient3 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                sender = new SenderData()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    addition = "test",
+                    emailadress = "test@gmail.com",
+                    firstname = "test",
+                    lastname = "test",
+                    messagetoshow = "test"
+                }
+            };
+
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.GeneralBackgroundImageChoice, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.GeneralFontChoice, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.GeneralMp3Choice, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.sender, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient1, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient2, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient3, "Propertie working properly");
+
+        }
+
+        [TestMethod]
+        [TestCategory("TestViewModels")]
+        public void FourPersonsGeneralChoiceViewmodelTest()
+        {
+            ViewModel.SenderAndRecieversFourPersonsSingleChoice model = new ViewModel.SenderAndRecieversFourPersonsSingleChoice()
+            {
+                GeneralBackgroundImageChoice = BackgroundImageEnum.Background1,
+                GeneralFontChoice = FontsEnum.Courier,
+                GeneralMp3Choice = Mp3Enum.Jingle1,
+                Recipient1 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient2 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient3 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient4 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                sender = new SenderData()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    addition = "test",
+                    emailadress = "test@gmail.com",
+                    firstname = "test",
+                    lastname = "test",
+                    messagetoshow = "test"
+                }
+            };
+
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.GeneralBackgroundImageChoice, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.GeneralFontChoice, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.GeneralMp3Choice, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.sender, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient1, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient2, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient3, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient4, "Propertie working properly");
+
+        }
+
+        [TestMethod]
+        [TestCategory("TestViewModels")]
+        public void FivePersonsGeneralChoiceViewmodelTest()
+        {
+            ViewModel.SenderAndRecieverFivePersonsSingleChoice model = new ViewModel.SenderAndRecieverFivePersonsSingleChoice()
+            {
+                GeneralBackgroundImageChoice = BackgroundImageEnum.Background1,
+                GeneralFontChoice = FontsEnum.Courier,
+                GeneralMp3Choice = Mp3Enum.Jingle1,
+                Recipient1 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient2 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient3 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient4 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient5 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                sender = new SenderData()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    addition = "test",
+                    emailadress = "test@gmail.com",
+                    firstname = "test",
+                    lastname = "test",
+                    messagetoshow = "test"
+                }
+            };
+
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.GeneralBackgroundImageChoice, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.GeneralFontChoice, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.GeneralMp3Choice, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.sender, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient1, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient2, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient3, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient4, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient5, "Propertie working properly");
+
+        }
+
+
+        [TestMethod]
+        [TestCategory("TestViewModels")]
+        public void OnePersonMultipleChoiceViewmodelTest()
+        {
+            ViewModel.SenderAndRecieverOnePersonMultipleChoice model = new ViewModel.SenderAndRecieverOnePersonMultipleChoice()
+            {
+                Recipient1 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                sender = new SenderData()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    addition = "test",
+                    emailadress = "test@gmail.com",
+                    firstname = "test",
+                    lastname = "test",
+                    messagetoshow = "test"
+                }
+            };
+
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.sender, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient1, "Propertie working properly");
+
+        }
+
+        [TestMethod]
+        [TestCategory("TestViewModels")]
+        public void TwoPersonsMultipleChoiceViewmodelTest()
+        {
+            ViewModel.SenderAndRecieverTwoPersonsMultipleChoice model = new ViewModel.SenderAndRecieverTwoPersonsMultipleChoice()
+            {
+                Recipient1 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient2 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                sender = new SenderData()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    addition = "test",
+                    emailadress = "test@gmail.com",
+                    firstname = "test",
+                    lastname = "test",
+                    messagetoshow = "test"
+                }
+            };
+
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.sender, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient1, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient2, "Propertie working properly");
+
+        }
+
+        [TestMethod]
+        [TestCategory("TestViewModels")]
+        public void ThreePersonsMultipleChoiceViewmodelTest()
+        {
+            ViewModel.SenderAndRecieverThreePersonsMultipleChoice model = new ViewModel.SenderAndRecieverThreePersonsMultipleChoice()
+            {
+                Recipient1 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient2 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient3 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                sender = new SenderData()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    addition = "test",
+                    emailadress = "test@gmail.com",
+                    firstname = "test",
+                    lastname = "test",
+                    messagetoshow = "test"
+                }
+            };
+
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.sender, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient1, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient2, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient3, "Propertie working properly");
+
+        }
+
+        [TestMethod]
+        [TestCategory("TestViewModels")]
+        public void FourPersonsMultipleChoiceViewmodelTest()
+        {
+            ViewModel.SenderAndRecieverFourPersonsMultipleChoice model = new ViewModel.SenderAndRecieverFourPersonsMultipleChoice()
+            {
+                Recipient1 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient2 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient3 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient4 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                sender = new SenderData()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    addition = "test",
+                    emailadress = "test@gmail.com",
+                    firstname = "test",
+                    lastname = "test",
+                    messagetoshow = "test"
+                }
+            };
+
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.sender, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient1, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient2, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient3, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient4, "Propertie working properly");
+
+        }
+
+
+        [TestMethod]
+        [TestCategory("TestViewModels")]
+        public void FivePersonsMultipleChoiceViewmodelTest()
+        {
+            ViewModel.SenderAndRecieverFivePersonsMultipleChoice model = new ViewModel.SenderAndRecieverFivePersonsMultipleChoice()
+            {
+                Recipient1 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient2 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient3 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient4 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                Recipient5 = new Recipient()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Email = "test@gmail.com",
+                    FirstName = "test",
+                    LastName = "test",
+                    StoreBackgroundImage = BackgroundImageEnum.Background1,
+                    StoreFont = FontsEnum.Courier,
+                    StoreMp3 = Mp3Enum.Jingle1
+                },
+                sender = new SenderData()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    addition = "test",
+                    emailadress = "test@gmail.com",
+                    firstname = "test",
+                    lastname = "test",
+                    messagetoshow = "test"
+                }
+            };
+
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.sender, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient1, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient2, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient3, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient4, "Propertie working properly");
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsNotNull(model.Recipient5, "Propertie working properly");
+
+        }
     }
 }

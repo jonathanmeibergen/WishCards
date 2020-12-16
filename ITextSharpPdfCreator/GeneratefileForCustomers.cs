@@ -40,9 +40,9 @@ namespace WishCards.ITextSharpPdfCreator
             doc.Open();
             //string storestring1 = "Dear Sir/Ma'am @ thank you heartilly for de purchase at Sjonnie's liquor store @ we will keep you up to date with the latest news";
             //string addnewlines1 = storestring1.Replace("@", Environment.NewLine);
-            string storestring1 = "From:@";
-            storestring1 = storestring1 + firstname + " " + lastname + "@";
-            storestring1 = storestring1 + contenttext;
+            string storestring1 = "From: @";
+            storestring1 = storestring1 + "@" + firstname + " " + lastname + "@";
+            storestring1 = storestring1 + "@" + contenttext;
             string backgroundfile;
             if (backgroundimage == BackgroundImageEnum.Background1)
             {
@@ -81,6 +81,11 @@ namespace WishCards.ITextSharpPdfCreator
             //paragraph.Alignment = Element.ALIGN_CENTER;
             paragraph.Alignment = Element.ALIGN_CENTER;
             paragraph.PaddingTop = Element.ALIGN_MIDDLE;
+            //ColumnText.ShowTextAligned(wri.DirectContent, Element.ALIGN_CENTER, new Phrase("test",), (PageSize.A4.Width/2),(PageSize.A4.Height/2), 0f);
+            ColumnText column = new ColumnText(wri.DirectContent);
+            column.SetSimpleColumn(new Rectangle((PageSize.A4.Width/2) - 100, 0, PageSize.A4.Width,((int)Math.Floor(PageSize.A4.Height/1.5))));
+            column.AddElement(new Paragraph(addnewlines1));
+            column.Go();
             //paragraph.IndentationRight = 100;
             //paragraph.IndentationLeft = 100;
             //if (font == FontsEnum.Arial)
@@ -92,7 +97,7 @@ namespace WishCards.ITextSharpPdfCreator
             //    paragraph.Font = FontFactory.GetFont("Times New Roman");
             //}
             doc.Add(jpg);
-            doc.Add(paragraph);
+            //doc.Add(paragraph);
             doc.Close();
             var pathpdffile = Path.GetFullPath(filename);
             return pathpdffile;

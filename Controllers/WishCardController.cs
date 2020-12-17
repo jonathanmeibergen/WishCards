@@ -12,6 +12,7 @@ using WishCards.Attributes;
 using WishCards.Data;
 using WishCards.DAL;
 using System.IO;
+using Microsoft.EntityFrameworkCore;
 
 namespace WishCards.Controllers
 {
@@ -24,6 +25,12 @@ namespace WishCards.Controllers
         {
             _context = context;
             _cards = cards;
+        }
+
+        // GET: Recipients
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.WishCards.ToListAsync());
         }
 
         // GET: FillInDataController

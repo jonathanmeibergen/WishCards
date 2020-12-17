@@ -26,7 +26,10 @@ namespace WishCards.Models
         public string RecipientsCommaSeparated { 
             get
             {
-                return string.Join(",", WishCard.Recipients.ToList());
+                if (WishCard.Recipients is not null)
+                    return string.Join(",", WishCard.Recipients.ToList());
+                else
+                    return null;
             } 
         }
 

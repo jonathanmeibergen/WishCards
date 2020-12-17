@@ -22,7 +22,6 @@ namespace WishCards.Controllers
         // GET: FillInDataController
         private IdataService _dataService = MockDataService.GetMockDataService();
         public ActionResult FillInData()
-        public async Task<IActionResult> Index()
         {
             SenderAndRecieversOnePersonSingleChoice item = new SenderAndRecieversOnePersonSingleChoice();
             item.sender = new Models.SenderData();

@@ -17,7 +17,7 @@ namespace WishCards.Migrations
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.0");
+                .HasAnnotation("ProductVersion", "5.0.1");
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -232,6 +232,15 @@ namespace WishCards.Migrations
 
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StoreBackgroundImage")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StoreFont")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StoreMp3")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

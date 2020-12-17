@@ -77,6 +77,10 @@ namespace WishCards.DAL
             }
             return card;
         }
+
+        public List<WishCard> GetByUser(ApplicationUser user)
+        {
+            throw new NotImplementedException();
+        }
     }
-    #endregion
 }

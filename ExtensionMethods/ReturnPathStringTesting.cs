@@ -8,7 +8,7 @@ namespace WishCards.ExtensionMethods
     public static class ReturnPathStringTesting
     {
         #region testing extension method
-        public static Task<List<int?>> Working<T>(this GeneralFunctions.ReturnPathString returnpath, Action<T, T>? execution, Task<List<int?>> checkingvalues) where T : Attribute
+        public static Task<List<int?>> Working<T>(this GeneralFunctions.ReturnPathString returnpath, Action<T, T>? execution, Task<List<int?>> checkingvalues) where T : ICloneable
         {
             checkingvalues.Result.Add(execution?.Method.Name.Length ?? 0);
             checkingvalues.

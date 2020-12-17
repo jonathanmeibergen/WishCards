@@ -11,6 +11,7 @@ namespace WishCards.Models
     #region christmas card model
     public class WishCard
     {
+
         [Key]
         public string Id { get; set; }
         public virtual ApplicationUser Author { get; set; }
@@ -22,6 +23,8 @@ namespace WishCards.Models
         public BackgroundImageEnum background { get; set; }
         public Mp3Enum mp3 { get; set; }
         public FontsEnum font { get; set; }
+        public ColorsEnum TextColor { get; set; }
+        public BackgroundsEnum Background { get; set; }
 
     }
 

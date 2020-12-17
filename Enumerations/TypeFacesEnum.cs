@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace WishCards.Enumerations
 {
-    public class TypeFacesEnum
+    public enum TypeFacesEnum
     {
-
+        Chopin,
+        GingerBread,
+        Glass,
+        StarryNight,
+        Waving,
+        Candy,
+        Perfect
     }
 }

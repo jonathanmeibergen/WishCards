@@ -9,8 +9,7 @@ using WishCards.Users;
 
 namespace WishCards.DAL
 {
-    #region actualDataBase
-    public class WishCardDbData
+    public class WishCardDbData : IWishCardDbData
     {
         private ApplicationDbContext _db;
 
@@ -34,7 +33,7 @@ namespace WishCards.DAL
         {
             _db = db;
         }
-        public WishCard GetWishCardById(string id)
+        public WishCard GetById(string id)
         {
             return _db.WishCards.FirstOrDefault(w => w.Id == id);
         }
@@ -58,6 +57,30 @@ namespace WishCards.DAL
             entity.State = EntityState.Modified;
             return entity.Entity;
         }
+
+        public WishCard Create(WishCard card)
+        {
+            var entry = _db.WishCards.Add(card);
+            return entry.Entity;
+        }
+
+        public void Commit() => _db.SaveChangesAsync();
+
+        public WishCard Delete(string id)
+        {
+            var card = GetById(id);
+
+            if (card != null)
+            {
+                _db.WishCards.Remove(card);
+                Commit();
+            }
+            return card;
+        }
+
+        public List<WishCard> GetByUser(ApplicationUser user)
+        {
+            throw new NotImplementedException();
+        }
     }
-    #endregion
 }

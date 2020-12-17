@@ -1,0 +1,62 @@
+﻿@model WishCards.Models.WishCardViewModel
+@using WishCards.Enumerations 
+
+@{
+    ViewData["Title"] = "Create a Wishcard";
+}
+
+<h1>FillInData</h1>
+
+<h4>Recipient</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="WishCard.Author" class="control-label"></label>
+                <input asp-for="WishCard.Author" class="form-control" />
+                <span asp-validation-for="WishCard.Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WishCard.TypeFace"></label>
+                @Html.DropDownListFor(x => Model.WishCard.TypeFace,
+                                      new SelectList(Enum.GetNames(typeof(TypeFacesEnum))),
+                                                     htmlAttributes: new { @class = "form-control" })
+                <span class="text-danger" asp-validation-for="@Model.WishCard.TypeFace"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WishCard.TextColor"></label>
+                @Html.DropDownListFor(x => Model.WishCard.TextColor,
+                                      new SelectList(Enum.GetNames(typeof(ColorsEnum))),
+                                                     htmlAttributes: new { @class = "form-control" })
+                <span class="text-danger" asp-validation-for="@Model.WishCard.TypeFace"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WishCard.Background"></label>
+                @Html.DropDownListFor(x => Model.WishCard.Background,
+                                      new SelectList(Enum.GetNames(typeof(BackgroundsEnum))),
+                                                     htmlAttributes: new { @class = "form-control", @onchange = "changeBackground"})
+                <span class="text-danger" asp-validation-for="@Model.WishCard.TypeFace"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div class="cold-md-6">
+        <img id="render_background" src="~/backgrounds/@Model.ImageName" asp-append-version="true">
+        <div id="render_text"></div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script type="text/javascript">
+    $('render_background').attr('src', function () { $('WishCard_Background')})
+</script>
+}

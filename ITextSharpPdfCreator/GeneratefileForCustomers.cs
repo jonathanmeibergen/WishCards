@@ -48,7 +48,7 @@ namespace WishCards.ITextSharpPdfCreator
             {
                 backgroundfile = "christmas-background1.jpg";
             }
-            if (backgroundimage == BackgroundImageEnum.Background1)
+            if (backgroundimage == BackgroundImageEnum.Background2)
             {
                 backgroundfile = "Christmas-background2.jpg";
             }
@@ -68,23 +68,23 @@ namespace WishCards.ITextSharpPdfCreator
             Paragraph paragraph = new Paragraph();
             if (font == FontsEnum.Courier)
             {
-             paragraph = new Paragraph(addnewlines1, new Font(Font.FontFamily.COURIER, 22));
+             paragraph = new Paragraph(addnewlines1, new Font(Font.FontFamily.COURIER, 40));
             }
             if (font == FontsEnum.Helvetica)
             {
-                paragraph = new Paragraph(addnewlines1, new Font(Font.FontFamily.HELVETICA, 22));
+                paragraph = new Paragraph(addnewlines1, new Font(Font.FontFamily.HELVETICA, 40));
             }
             if (font == FontsEnum.TimesNewRoman)
             {
-                paragraph = new Paragraph(addnewlines1, new Font(Font.FontFamily.TIMES_ROMAN, 22));
+                paragraph = new Paragraph(addnewlines1, new Font(Font.FontFamily.TIMES_ROMAN, 40));
             }
             //paragraph.Alignment = Element.ALIGN_CENTER;
             paragraph.Alignment = Element.ALIGN_CENTER;
             paragraph.PaddingTop = Element.ALIGN_MIDDLE;
             //ColumnText.ShowTextAligned(wri.DirectContent, Element.ALIGN_CENTER, new Phrase("test",), (PageSize.A4.Width/2),(PageSize.A4.Height/2), 0f);
             ColumnText column = new ColumnText(wri.DirectContent);
-            column.SetSimpleColumn(new Rectangle((PageSize.A4.Width/2) - 100, 0, PageSize.A4.Width,((int)Math.Floor(PageSize.A4.Height/1.5))));
-            column.AddElement(new Paragraph(addnewlines1));
+            column.SetSimpleColumn(new Rectangle((PageSize.A4.Width/2) - 300, 0, PageSize.A4.Width,((int)Math.Floor(PageSize.A4.Height/1.5))));
+            column.AddElement(paragraph);
             column.Go();
             //paragraph.IndentationRight = 100;
             //paragraph.IndentationLeft = 100;

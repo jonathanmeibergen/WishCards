@@ -32,75 +32,74 @@ namespace WishCards.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult FillInData(SenderAndRecieversOnePersonSingleChoice item)
         {
-            //try
-            //{
-            //    _dataService.AddRecipient(item.Recipient1);
-            //    _dataService.AddSender(item.sender);
-            //    var item2 = new Models.WishCard()
-            //    {
-            //        Id = Guid.NewGuid().ToString(),
-            //        Recipients = item.Recipient1,
-            //        sender = item.sender,
-            //        Text = item.sender.messagetoshow,
-            //        font = item.GeneralFontChoice,
-            //        background = item.GeneralBackgroundImageChoice,
-            //        mp3 = item.GeneralMp3Choice
+            try
+            {
+                _dataService.AddRecipient(item.Recipient1);
+                _dataService.AddSender(item.sender);
+                var item2 = new Models.WishCard()
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Recipients = item.Recipient1,
+                    sender = item.sender,
+                    Text = item.sender.messagetoshow,
+                    font = item.GeneralFontChoice,
+                    background = item.GeneralBackgroundImageChoice,
+                    mp3 = item.GeneralMp3Choice
 
-            //    };
-            //    _dataService.AddWishCard(item2);
+                };
+                _dataService.AddWishCard(item2);
 
-            //<summary>
-            // working code commented out by pdf file generation testing code
-            //<summary>
+                //<summary>
+                // working code commented out by pdf file generation testing code
+                //<summary>
 
-            string contenttext = "yes";
-            var enum1 = BackgroundImageEnum.Background1;
-            var enum2 = FontsEnum.Courier;
-            var enum3 = Mp3Enum.Jingle1;
-            string storepath = ITextSharpPdfCreator.GeneratefileForCustomers.GeneratePdfFileForCustomer(GeneralFunctions.ReturnPathString.ReturnUniqueFileName(), "john", "smith", contenttext, enum1, enum3, enum2);
-            ViewBag.pathmessage = "this";
-            //GeneralFunctions.GeneratePdfAndSendToRecipients.GenerateAndSendData(item, item.sender.messagetoshow, item.GeneralBackgroundImageChoice, item.GeneralMp3Choice, item.GeneralFontChoice);
+                //string contenttext = "yes";
+                //var enum1 = BackgroundImageEnum.Background1;
+                //var enum2 = FontsEnum.TimesNewRoman;
+                //var enum3 = Mp3Enum.Jingle1;
+                //string storepath = ITextSharpPdfCreator.GeneratefileForCustomers.GeneratePdfFileForCustomer(GeneralFunctions.ReturnPathString.ReturnUniqueFileName(), item.sender.firstname, item.sender.lastname, item.sender.messagetoshow, item.GeneralBackgroundImageChoice, item.GeneralMp3Choice, item.GeneralFontChoice);
+                GeneralFunctions.GeneratePdfAndSendToRecipients.GenerateAndSendData(item, item.sender.messagetoshow, item.GeneralBackgroundImageChoice, item.GeneralMp3Choice, item.GeneralFontChoice);
                 return RedirectToAction("EndScreen", "EndScreen");
-//            }
-//#pragma warning disable CS0168 // Variable is declared but never used
-//            catch (NullReferenceException ex)
-//#pragma warning restore CS0168 // Variable is declared but never used
-//            {
-//                SenderAndRecieversOnePersonSingleChoice item2 = new SenderAndRecieversOnePersonSingleChoice();
-//                item2.sender = new Models.SenderData();
-//                item2.Recipient1 = new Models.Recipient();
-//                item2.GeneralMp3Choice = new Enumerations.Mp3Enum();
-//                item2.GeneralFontChoice = new Enumerations.FontsEnum();
-//                item2.GeneralBackgroundImageChoice = new Enumerations.BackgroundImageEnum();
-//                Response.WriteAsync("<script>alert('Wrong value filled in try again');</script>");
-//                return View(item2);
-//            }
-//#pragma warning disable CS0168 // Variable is declared but never used
-//            catch (ArgumentNullException ex)
-//#pragma warning restore CS0168 // Variable is declared but never used
-//            {
-//                SenderAndRecieversOnePersonSingleChoice item2 = new SenderAndRecieversOnePersonSingleChoice();
-//                item2.sender = new Models.SenderData();
-//                item2.Recipient1 = new Models.Recipient();
-//                item2.GeneralMp3Choice = new Enumerations.Mp3Enum();
-//                item2.GeneralFontChoice = new Enumerations.FontsEnum();
-//                item2.GeneralBackgroundImageChoice = new Enumerations.BackgroundImageEnum();
-//                Response.WriteAsync("<script>alert('Wrong value filled in try again');</script>");
-//                return View(item2);
-//            }
-//#pragma warning disable CS0168 // Variable is declared but never used
-//            catch (Exception ex)
-//#pragma warning restore CS0168 // Variable is declared but never used
-//            {
-//                SenderAndRecieversOnePersonSingleChoice item2 = new SenderAndRecieversOnePersonSingleChoice();
-//                item2.sender = new Models.SenderData();
-//                item2.Recipient1 = new Models.Recipient();
-//                item2.GeneralMp3Choice = new Enumerations.Mp3Enum();
-//                item2.GeneralFontChoice = new Enumerations.FontsEnum();
-//                item2.GeneralBackgroundImageChoice = new Enumerations.BackgroundImageEnum();
-//                Response.WriteAsync("<script>alert('Something went wrong try again');</script>");
-//                return View(item2);
-//            }
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (NullReferenceException ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                SenderAndRecieversOnePersonSingleChoice item2 = new SenderAndRecieversOnePersonSingleChoice();
+                item2.sender = new Models.SenderData();
+                item2.Recipient1 = new Models.Recipient();
+                item2.GeneralMp3Choice = new Enumerations.Mp3Enum();
+                item2.GeneralFontChoice = new Enumerations.FontsEnum();
+                item2.GeneralBackgroundImageChoice = new Enumerations.BackgroundImageEnum();
+                Response.WriteAsync("<script>alert('Wrong value filled in try again');</script>");
+                return View(item2);
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (ArgumentNullException ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                SenderAndRecieversOnePersonSingleChoice item2 = new SenderAndRecieversOnePersonSingleChoice();
+                item2.sender = new Models.SenderData();
+                item2.Recipient1 = new Models.Recipient();
+                item2.GeneralMp3Choice = new Enumerations.Mp3Enum();
+                item2.GeneralFontChoice = new Enumerations.FontsEnum();
+                item2.GeneralBackgroundImageChoice = new Enumerations.BackgroundImageEnum();
+                Response.WriteAsync("<script>alert('Wrong value filled in try again');</script>");
+                return View(item2);
+            }
+#pragma warning disable CS0168 // Variable is declared but never used
+            catch (Exception ex)
+#pragma warning restore CS0168 // Variable is declared but never used
+            {
+                SenderAndRecieversOnePersonSingleChoice item2 = new SenderAndRecieversOnePersonSingleChoice();
+                item2.sender = new Models.SenderData();
+                item2.Recipient1 = new Models.Recipient();
+                item2.GeneralMp3Choice = new Enumerations.Mp3Enum();
+                item2.GeneralFontChoice = new Enumerations.FontsEnum();
+                item2.GeneralBackgroundImageChoice = new Enumerations.BackgroundImageEnum();
+                Response.WriteAsync("<script>alert('Something went wrong try again');</script>");
+                return View(item2);
+            }
 
         }
 

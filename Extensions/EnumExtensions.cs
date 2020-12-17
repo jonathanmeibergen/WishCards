@@ -9,7 +9,7 @@ namespace WishCards.Extensions
         public static void Extra(this Enum enumValue){
         }
 
-
+      
         public static Expected GetAttributeValue<T, Expected>(this Enum enumeration, Func<T, Expected> expression) where T : Attribute
         {
             T attribute =
@@ -27,5 +27,7 @@ namespace WishCards.Extensions
 
             return expression(attribute);
         }
+
+
     }
 }

@@ -227,8 +227,12 @@ namespace WishCards.Migrations
 
             modelBuilder.Entity("WishCards.Models.Recipient", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Author")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -239,20 +243,21 @@ namespace WishCards.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("WishCardId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid?>("WishCardId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
                     b.HasIndex("WishCardId");
 
-                    b.ToTable("Recipient");
+                    b.ToTable("Recipients");
                 });
 
             modelBuilder.Entity("WishCards.Models.WishCard", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("AuthorId")
                         .HasColumnType("nvarchar(450)");

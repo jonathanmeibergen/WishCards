@@ -13,6 +13,7 @@ using WishCards.Data;
 using WishCards.DAL;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
+using WishCards.Users;
 
 namespace WishCards.Controllers
 {
@@ -38,6 +39,7 @@ namespace WishCards.Controllers
         {
             WishCardViewModel cardVM = new WishCardViewModel();
             cardVM.WishCard = new WishCard();
+            cardVM.WishCard.Author = new ApplicationUser();
             cardVM.WishCard.Background = BackgroundsEnum.Red;
             return View(cardVM);
         }
@@ -55,21 +57,41 @@ namespace WishCards.Controllers
             {
                 Author = (Users.ApplicationUser)_context
                     .Users
-                    .FirstOrDefault(
-                        u => 
-                        u.UserName == HttpContext.User.Identity.Name),
+                    .FirstOrDefault(u =>
+                                    u.UserName == HttpContext.User.Identity.Name),
 
                 Text = collection[keys.Select(k => k)
-                                      .Where(
-                                            v => 
-                                            v.Contains("Text"))
-                                             .FirstOrDefault()],
+                                      .Where(v =>
+                                             v.Contains("Text"))
+                                              .FirstOrDefault()],
 
-                TextColor = (ColorsEnum)Enum.Parse(typeof(ColorsEnum), 
-                                                   collection[keys.Select(k => k).Where(v => v.Contains("Color")).FirstOrDefault()]),
-                TypeFace = (TypeFacesEnum)Enum.Parse(typeof(TypeFacesEnum), collection[keys.Select(k => k).Where(v => v.Contains("Type")).FirstOrDefault()]),
-                Background = (BackgroundsEnum)Enum.Parse(typeof(BackgroundsEnum), Path.GetFileNameWithoutExtension(collection[keys.Select(k => k).Where(v => v.Contains("Background")).FirstOrDefault()]))
+                TextColor = (ColorsEnum)Enum.Parse(typeof(ColorsEnum),
+                                                   collection[keys
+                                                                  .Where(v =>
+                                                                         v.Contains("Color"))
+                                                                          .FirstOrDefault()]),
+
+                TypeFace = (TypeFacesEnum)Enum.Parse(typeof(TypeFacesEnum),
+                                                     collection[keys
+                                                                    .Where(v =>
+                                                                           v.Contains("Type"))
+                                                                            .FirstOrDefault()]),
+
+                Background = (BackgroundsEnum)Enum.Parse(typeof(BackgroundsEnum),
+                                              Path.GetFileNameWithoutExtension(collection[keys
+                                                                                              .Where(v =>
+                                                                                                     v.Contains("Background"))
+                                                                                                      .FirstOrDefault()])),
+
+                Recipients = collection[keys.Where(k => 
+                                                   k.Contains("Comma"))
+                                                   .FirstOrDefault()].ToString()
+                                                                     .Split(";")
+                                                                     .ToList<string>()
+                                                                     .Select(r => 
+                                                                             new Recipient { Email = r.ToString(), Id = Guid.NewGuid() }).ToList()
             };
+
             wishCard = _cards.Create(wishCard);
             _cards.Commit(wishCard.Id);
             return View();

@@ -22,18 +22,18 @@ namespace WishCards.Views
         // GET: Recipients
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Recipient.ToListAsync());
+            return View(await _context.Recipients.ToListAsync());
         }
 
         // GET: Recipients/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(Guid id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var recipient = await _context.Recipient
+            var recipient = await _context.Recipients
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (recipient == null)
             {
@@ -73,7 +73,7 @@ namespace WishCards.Views
                 return NotFound();
             }
 
-            var recipient = await _context.Recipient.FindAsync(id);
+            var recipient = await _context.Recipients.FindAsync(id);
             if (recipient == null)
             {
                 return NotFound();
@@ -86,7 +86,7 @@ namespace WishCards.Views
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,FirstName,LastName,Email")] Recipient recipient)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,FirstName,LastName,Email")] Recipient recipient)
         {
             if (id != recipient.Id)
             {
@@ -117,14 +117,14 @@ namespace WishCards.Views
         }
 
         // GET: Recipients/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(Guid id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var recipient = await _context.Recipient
+            var recipient = await _context.Recipients
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (recipient == null)
             {
@@ -139,15 +139,15 @@ namespace WishCards.Views
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var recipient = await _context.Recipient.FindAsync(id);
-            _context.Recipient.Remove(recipient);
+            var recipient = await _context.Recipients.FindAsync(id);
+            _context.Recipients.Remove(recipient);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RecipientExists(string id)
+        private bool RecipientExists(Guid id)
         {
-            return _context.Recipient.Any(e => e.Id == id);
+            return _context.Recipients.Any(e => e.Id == id);
         }
     }
 }

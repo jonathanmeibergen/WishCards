@@ -2,7 +2,7 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-$(document).ready(function () { changeText(); });
+$(document).ready(function () { changeText(); $("#RecipientsEmailBoxes").email_multiple();});
 
 
 function changeBackground() {
@@ -49,7 +49,6 @@ function changeTypeFace() {
  * **/
 
 (function ($) {
-
     $.fn.email_multiple = function (options) {
 
         let defaults = {
@@ -62,14 +61,15 @@ function changeTypeFace() {
         let email = "";
 
         return this.each(function () {
-            $(this).after("<span class=\"to-input\">Email :</span>\n" +
-                "<div class=\"all-mail\"></div>\n" +
-                "<input type=\"text\" name=\"email\" class=\"enter-mail-id\" placeholder=\"Enter Email ...\" />");
+            $(this).after("<div class=\"all-mail\"></div>\n" +
+                          "<input type=\"text\" name=\"email\" class=\"enter-mail-id\" placeholder=\"Enter Email ...\" />");
             let $orig = $(this);
+            let $inputHidden = $('#RecipientsCommaSeparated');// hidden input for form submit
             let $element = $('.enter-mail-id');
             $element.keydown(function (e) {
                 $element.css('border', '');
-                if (e.keyCode === 13 || e.keyCode === 32) {
+                if (e.keyCode === 13 || e.keyCode === 32 || e.keyCode === 39 || e.keyCode === 188) {
+                    e.preventDefault();//disable form submit
                     let getValue = $element.val();
                     if (/^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/.test(getValue)) {
                         $('.all-mail').append('<span class="email-ids">' + getValue + '<span class="cancel-email">x</span></span>');
@@ -81,7 +81,8 @@ function changeTypeFace() {
                     }
                 }
 
-                $orig.val(email.slice(0, -1))
+                $orig.val(email.slice(0, -1));
+                $inputHidden.val(email.slice(0, -1));//save emails in hidden input for submit
             });
 
             $(document).on('click', '.cancel-email', function () {
@@ -101,6 +102,7 @@ function changeTypeFace() {
                 })
 
                 $orig.val(email.slice(0, -1))
+                $inputHidden.val(email.slice(0, -1));//save emails in hidden input for submit
             }
 
             if (settings.reset) {

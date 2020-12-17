@@ -23,13 +23,11 @@ namespace WishCards.Models
 
         [Required]
         [DisplayName("Recipient Email Addresses")]
-        public string RecipientsCommaSeparated { 
-            get
-            {
-                if (WishCard.Recipients is not null)
-                    return string.Join(",", WishCard.Recipients.ToList());
-                else
-                    return null;
+        public string RecipientsCommaSeparated {
+            get {
+                    return WishCard.Recipients is not null 
+                           ? string.Join(",", WishCard.Recipients?.ToList()) 
+                           : null;
             } 
         }
 

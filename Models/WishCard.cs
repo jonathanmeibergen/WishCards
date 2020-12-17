@@ -19,6 +19,5 @@ namespace WishCards.Models
         public TypeFacesEnum TypeFace { get; set; }
         public ColorsEnum TextColor { get; set; }
         public BackgroundsEnum Background { get; set; }
-
     }
 }

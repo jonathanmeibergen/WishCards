@@ -41,6 +41,7 @@ namespace WishCards.DAL
             if (card is not null)
             {
                 var entry = _db.WishCards.Add(card);
+                card.Recipients.ForEach(r => { _db.Recipients.Add(r); }) ;
                 return entry.Entity;
             }
             return null;

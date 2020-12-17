@@ -157,7 +157,7 @@ namespace WishCards.Migrations
                 name: "WishCards",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     AuthorId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     Text = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TypeFace = table.Column<int>(type: "int", nullable: false),
@@ -176,20 +176,21 @@ namespace WishCards.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Recipient",
+                name: "Recipients",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    WishCardId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    Author = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    WishCardId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Recipient", x => x.Id);
+                    table.PrimaryKey("PK_Recipients", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Recipient_WishCards_WishCardId",
+                        name: "FK_Recipients_WishCards_WishCardId",
                         column: x => x.WishCardId,
                         principalTable: "WishCards",
                         principalColumn: "Id",
@@ -236,8 +237,8 @@ namespace WishCards.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Recipient_WishCardId",
-                table: "Recipient",
+                name: "IX_Recipients_WishCardId",
+                table: "Recipients",
                 column: "WishCardId");
 
             migrationBuilder.CreateIndex(
@@ -264,7 +265,7 @@ namespace WishCards.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Recipient");
+                name: "Recipients");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

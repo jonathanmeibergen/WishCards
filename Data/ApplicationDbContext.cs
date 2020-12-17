@@ -15,6 +15,6 @@ namespace WishCards.Data
         }
 
         public DbSet<WishCard> WishCards { get; set; }
-        public DbSet<Recipient> Recipient { get; set; }
+        public DbSet<Recipient> Recipients { get; set; }
     }
 }

@@ -10,9 +10,11 @@ namespace WishCards.Controllers
     public class EndScreenController : Controller
     {
         // GET: EndScreenController
+        #region ShowFinalScreen
         public ActionResult EndScreen()
         {
             return View();
         }
+        #endregion
     }
 }

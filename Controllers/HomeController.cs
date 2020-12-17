@@ -9,6 +9,7 @@ using WishCards.Models;
 
 namespace WishCards.Controllers
 {
+    #region NotUsed
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -44,4 +45,5 @@ namespace WishCards.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+    #endregion
 }

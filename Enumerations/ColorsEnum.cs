@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace WishCards.Enumerations
 {
+    #region usedfontcolor
     public enum ColorsEnum
     {
         AntiqueWhite,
@@ -17,4 +18,5 @@ namespace WishCards.Enumerations
         IndianRed,
         MediumSpringGreen
     }
+    #endregion
 }

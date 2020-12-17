@@ -13,6 +13,22 @@ namespace WishCards.DAL
     {
         private ApplicationDbContext _db;
 
+        private static WishCardDbData _DataService;
+
+        private WishCardDbData()
+        {
+
+        }
+
+        public static WishCardDbData GetDataService()
+        {
+            if (_DataService == null)
+            {
+                _DataService = new WishCardDbData();
+            }
+            return _DataService;
+        }
+
         public WishCardDbData(ApplicationDbContext db)
         {
             _db = db;
@@ -22,7 +38,13 @@ namespace WishCards.DAL
             return _db.WishCards.FirstOrDefault(w => w.Id == id);
         }
 
-        public List<WishCard> GetByUser(ApplicationUser user)
+        public bool AddWishCard(WishCard card)
+        {
+            _db.WishCards.Add(card);
+            return true;
+        }
+
+        public List<WishCard> GetWishCardByUser(ApplicationUser user)
         {
             return _db.WishCards.Select(w => w)
                                 .Where(w => w.Author.Id == user.Id)
@@ -56,4 +78,5 @@ namespace WishCards.DAL
             return card;
         }
     }
+    #endregion
 }

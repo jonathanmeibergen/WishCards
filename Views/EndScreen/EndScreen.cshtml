@@ -1,5 +1,19 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<style>
+        .mailicon {
+            width: 300px;
+        }
+        .btn {
+        width: 300px;
+        }
+        .card {
+            width: 300px;
+            margin-top: 150px;
+            transform:translate(400px);
+        }
+        body {
+        }
+    </style>
+    <div class="card">
+    <img src="~/Images/christmas-endscreen-icon.png" class="mailicon" />
+    <button onclick="location.href='@Url.Action("StartPage","StartPage")'" class="btn btn-success">Send more christmas messages!</button>
+    </div>

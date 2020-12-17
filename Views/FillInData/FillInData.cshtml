@@ -1,0 +1,218 @@
+﻿@model WishCards.ViewModel.SenderAndRecieversOnePersonSingleChoice
+
+@{
+    ViewData["Title"] = "FillInData";
+}
+<link rel="stylesheet" href="~/css/InputPageLayout.css" />
+@*<style>
+        .background1 {
+            width: 200px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .background2 {
+            width: 200px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .background3 {
+            width: 200px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            text-align: center;
+            float: left;
+        }
+
+        .songcard {
+
+            max-width: 300px;
+            text-align: center;
+            float: left;
+        }
+
+
+        .row {
+          position:absolute;
+          margin-top: 200px;
+          text-align: left;
+          margin-left: 350px;
+        }
+
+        .backgroundimages {
+          padding-bottom:500px;
+        }
+
+        body {
+            background-image:url("../../wwwroot/Images/Christmas-vectors.jpg");
+        }
+
+        #Cardid1 {
+        margin-left: 30px;
+        margin-right: 30px;
+        }
+
+        #Cardid2 {
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        #Cardid3 {
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        #backgroundid1 {
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        #backgroundid2 {
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        #backgroundid3 {
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        .form-control {
+        width: 300px;
+        }
+    /*    #Submitid {
+        transform:translateX(-300px);
+        }
+        #Submitid2 {
+            transform: translateX(-300px);
+        }*/
+    </style>*@
+
+<body style="background-image: url(../../wwwroot/Images/Christmas-vectors.jpg)">
+</body>
+<hr />
+<div class="previews">
+    <div class="backgroundimages">
+        <div class="card" id="backgroundid1">
+            <img src="~/Images/christmas-background1.jpg" class="background1" />
+            <b>Background 1</b>
+        </div>
+        <div class="card" id="backgroundid2">
+            <img src="~/Images/Christmas-background2.jpg" class="background2" />
+            <b>Background 2</b>
+        </div>
+        <div class="card" id="backgroundid3">
+            <img src="~/Images/christmas-background3.jpg" class="background3" />
+            <b>Background 3</b>
+        </div>
+    </div>
+    <div class="Jingles">
+        <div class="songcard" id="Cardid1">
+            <audio controls class="test1">
+                <source src="~/Mp3Jingles/Andy Williams - It's The Most Wonderful Time Of The Year.mp3" />
+            </audio>
+            <b>Jingle 1</b>
+        </div>
+        <div class="songcard" id="Cardid2">
+            <audio controls>
+                <source src="~/Mp3Jingles/Mariah Carey - All I Want For Christmas Is You (Official Video).mp3" />
+            </audio>
+            <b>Jingle 2</b>
+        </div>
+        <div class="songcard">
+            <audio controls id="Cardid3">
+                <source src="~/Mp3Jingles/Wham! - Last Christmas (Official Video).mp3" />
+            </audio>
+            <b>Jingle 3</b>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="FillInData">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="sender.firstname" class="control-label"></label>
+                <input asp-for="sender.firstname" class="form-control" />
+                <span asp-validation-for="sender.firstname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sender.addition" class="control-label"></label>
+                <input asp-for="sender.addition" class="form-control" />
+                <span asp-validation-for="sender.addition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sender.lastname" class="control-label"></label>
+                <input asp-for="sender.lastname" class="form-control" />
+                <span asp-validation-for="sender.lastname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sender.emailadress" class="control-label"></label>
+                <input asp-for="sender.emailadress" class="form-control" />
+                <span asp-validation-for="sender.emailadress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sender.messagetoshow" class="control-label"></label>
+                <input asp-for="sender.messagetoshow" class="form-control" />
+                <span asp-validation-for="sender.messagetoshow" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneralBackgroundImageChoice" class="control-label"></label>
+                <select asp-for="GeneralBackgroundImageChoice" asp-items="@Html.GetEnumSelectList<WishCards.Enumerations.BackgroundImageEnum>()" class="btn"></select>
+                <span asp-validation-for="GeneralBackgroundImageChoice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneralFontChoice" class="control-label"></label>
+                <select asp-for="GeneralFontChoice" asp-items="@Html.GetEnumSelectList<WishCards.Enumerations.FontsEnum>()" class="btn"></select>
+                <span asp-validation-for="GeneralFontChoice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneralMp3Choice" class="control-label"></label>
+                <select asp-for="GeneralMp3Choice" asp-items="@Html.GetEnumSelectList<WishCards.Enumerations.Mp3Enum>()" class="btn"></select>
+                <span asp-validation-for="GeneralMp3Choice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="button" onclick="location.href='@Url.Action("FillInDataMultipleChoice","FillInData")'" value="Choose unique template for every recipient" id="Submitid2" class="btn btn-success" />
+            </div>
+            <div class="form-group">
+                <input type="button" onclick="location.href='@Url.Action("FillInDataTwoPersonsSingleChoice","FillInData")'" value="Add another recipient" id="Submitid2" class="btn btn-success" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Recipient1.FirstName" class="control-label"></label>
+                <input asp-for="Recipient1.FirstName" class="form-control" />
+                <span asp-validation-for="Recipient1.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Recipient1.LastName" class="control-label"></label>
+                <input asp-for="Recipient1.LastName" class="form-control" />
+                <span asp-validation-for="Recipient1.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Recipient1.Email" class="control-label"></label>
+                <input asp-for="Recipient1.Email" class="form-control" />
+                <span asp-validation-for="Recipient1.Email" class="text-danger"></span>
+            </div>
+            <div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Send message" id="Submitid" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

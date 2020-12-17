@@ -19,7 +19,7 @@ namespace WishCards.DAL
         }
         public WishCard GetById(Guid id)
         {
-            return _db.WishCards.FirstOrDefault(w => w.Id == id);
+            return _db.WishCards.Include(w => w.Recipients).FirstOrDefault(w => w.Id == id);
         }
 
         public List<WishCard> GetByUser(ApplicationUser user)

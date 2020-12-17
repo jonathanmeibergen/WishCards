@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using WishCards.Attributes;
@@ -11,14 +13,24 @@ namespace WishCards.Models
 {
     public class WishCardViewModel
     {
-        public string Description { get => "We wish you a a Merry Christmas and a happy New Year"; set { } }
         public WishCard WishCard { get; set; }
+        public string Description { get => "We wish You a Merry Christmas and a Happy New Year"; set { } }
         public string ImageName { 
             get {
-                return $"{this.WishCard.Background}.{this.WishCard.Background.GetAttributeValue<FileTypeAttribute, string>(a => a.FileType)}";
+                return $"{WishCard.Background}.{WishCard.Background.GetAttributeValue<FileTypeAttribute, string>(a => a.FileType)}";
             } 
         }
 
+        [Required]
+        [DisplayName("Recipient Email Addresses")]
+        public string RecipientsCommaSeparated { 
+            get
+            {
+                return string.Join(",", WishCard.Recipients.ToList());
+            } 
+        }
+
+        //special case since the values of background needs the filetype added in the value attribute of <option> html tag
         public IEnumerable<SelectListItem> BackgroundSelectItems { 
             get {
                 List<BackgroundsEnum> enumValues = Enum.GetValues<BackgroundsEnum>().ToList();
@@ -27,19 +39,8 @@ namespace WishCards.Models
                     Value = $"{n}.{n.GetAttributeValue<FileTypeAttribute, string>(a => a.FileType)}",
                     Text = n.ToString()
                 }).ToList();
-                var emptyField = new SelectListItem()
-                {
-                    Value = "0",
-                    Text = "--- Choose ---"
-                };
-                selectListItems.Insert(0, emptyField);
                 return new SelectList(selectListItems, "Value", "Text");
             }
-        }
-
-        public WishCardViewModel()
-        {
-            Description = "We wish you a Merry Christmas and a happy New Year";
         }
 
     }

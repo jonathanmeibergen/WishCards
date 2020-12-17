@@ -13,10 +13,11 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <h3>@Html.Raw(Model.WishCard.Author)</h3>
             <div class="form-group">
-                <label asp-for="WishCard.Author" class="control-label"></label>
-                <input asp-for="WishCard.Author" class="form-control" />
-                <span asp-validation-for="WishCard.Author" class="text-danger"></span>
+                <label asp-for="RecipientsCommaSeparated" class="control-label"></label>
+                <input asp-for="RecipientsCommaSeparated" class="form-control" />
+                <span asp-validation-for="RecipientsCommaSeparated" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="WishCard.Text" class="control-label"></label>

@@ -10,7 +10,7 @@ namespace WishCards.ExtensionMethods
         #region testing extension method
 
 #nullable enable
-        public static Task<List<int?>> Working<T>(this GeneralFunctions.GeneratePdfAndSendToRecipients generatePdfAndSendToRecipients, Action<T, T>? execution, Task<List<int?>> checkingvalues) where T : Attribute
+        public static Task<List<int?>> Working<T>(this GeneralFunctions.GeneratePdfAndSendToRecipients generatePdfAndSendToRecipients, Action<T, T>? execution, Task<List<int?>> checkingvalues) where T : ICloneable
         {
             checkingvalues.Result.Add(execution?.Method.Name.Length ?? 0);
             checkingvalues.
